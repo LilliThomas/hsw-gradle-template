@@ -80,13 +80,22 @@ public class IBAN {
     }
 
     public boolean isVBMS(String IBANnumber){
-        IBANnumber = this.IBANnumber;
-        String blz = IBANnumber.substring(4,12);
-        System.out.println(blz);
+        String blz = getBLZ(IBANnumber);
         if(blz.equals("40361906")){
             return true;
         }else{
             return false;
         }
+    }
+    public String getBLZ(String IBANnumber){
+        IBANnumber = this.IBANnumber;
+        String blz = IBANnumber.substring(4,12);
+        return blz;
+    }
+
+    public String getKontoNr(String IBANnumber){
+        IBANnumber = this.IBANnumber;
+        String KontoNr = IBANnumber.substring(12);
+        return KontoNr;
     }
 }

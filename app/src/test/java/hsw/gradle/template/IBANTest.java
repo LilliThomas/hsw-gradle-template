@@ -39,4 +39,16 @@ public class IBANTest {
         IBAN classUnderTest = new IBAN(myIBAN);
         assertEquals(classUnderTest.isVBMS(myIBAN), true);
     }
+
+    @Test void testgetBlz(){
+        String myIBAN = "DE68403619060012345678";
+        IBAN classUnderTest = new IBAN(myIBAN);
+        assertEquals(classUnderTest.getBLZ(myIBAN), "40361906");
+    }
+
+    @Test void testgetKontoNr(){
+        String myIBAN = "DE68403619060012345678";
+        IBAN classUnderTest = new IBAN(myIBAN);
+        assertEquals(classUnderTest.getKontoNr(myIBAN), "0012345678");
+    }
 }
