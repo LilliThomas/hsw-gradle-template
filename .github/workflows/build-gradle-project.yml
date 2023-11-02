@@ -12,7 +12,7 @@ jobs:
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
     - name: test
-      uses: ./gradlew test
+      run: ./gradlew test
     - name: Run build with Gradle Wrapper
       run: ./gradlew build
 
