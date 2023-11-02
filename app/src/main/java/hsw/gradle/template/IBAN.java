@@ -79,7 +79,14 @@ public class IBAN {
         }
     }
 
-    //public boolean isVolksbank(){
-
-    //}
+    public boolean isVBMS(String IBANnumber){
+        IBANnumber = this.IBANnumber;
+        String blz = IBANnumber.substring(4,12);
+        System.out.println(blz);
+        if(blz.equals("40361906")){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

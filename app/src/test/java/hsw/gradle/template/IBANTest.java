@@ -27,4 +27,16 @@ public class IBANTest {
         IBAN classUnderTest = new IBAN(myIBAN);
         assertEquals(classUnderTest.check(myIBAN), false);
     }
+
+    @Test void IBANVolksbankMuensterWrong(){
+        String myIBAN = "DE68210501700012345678";
+        IBAN classUnderTest = new IBAN(myIBAN);
+        assertEquals(classUnderTest.isVBMS(myIBAN), false);
+    }
+
+    @Test void IBANVolksbankMuenster(){
+        String myIBAN = "DE68403619060012345678";
+        IBAN classUnderTest = new IBAN(myIBAN);
+        assertEquals(classUnderTest.isVBMS(myIBAN), true);
+    }
 }
